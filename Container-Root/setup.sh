@@ -6,6 +6,12 @@ if [ -d /etc/apt ]; then
         [ -f /etc/apt/apt.conf ] && cat /etc/apt/apt.conf
 fi
 
+apt update
+
+apt upgrade -y
+
+apt install -y psmisc
+
 export GOPROXY=direct
 
 go install github.com/pmylund/cpuburn@latest

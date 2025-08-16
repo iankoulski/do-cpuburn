@@ -21,6 +21,6 @@ spec:
       - image: "${REGISTRY}${IMAGE}${TAG}"
       # ref: https://github.com/patrickmn/cpuburn
         imagePullPolicy: Always
-        command: ["bash", "-c", "while true; do date; cpuburn & ; sleep 20; kill -9 $(ps -a | grep cpuburn | awk '{print $1}'); sleep 10; done"]
+        command: ["bash", "-c", "while true; do date; cpuburn & sleep 20; killall cpuburn; sleep 10; done"]
         name: "${APP_NAME}"
 
